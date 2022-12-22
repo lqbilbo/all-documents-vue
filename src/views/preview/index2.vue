@@ -8,10 +8,10 @@
         </div>
 
 
-        <div class="pdf_down">
-            <div class="pdf_set_left" @click="scaleD()">放大</div>
-            <div class="pdf_set_middle" @click="scaleX()">缩小</div>
-        </div>
+<!--        <div class="pdf_down">-->
+<!--            <div class="pdf_set_left" @click="scaleD()">放大</div>-->
+<!--            <div class="pdf_set_middle" @click="scaleX()">缩小</div>-->
+<!--        </div>-->
 
 
         <div :style="{width:pdf_div_width,margin:'0 auto', height: '500'}">

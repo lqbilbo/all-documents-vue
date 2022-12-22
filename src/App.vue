@@ -5,9 +5,7 @@
 <!--      <router-link to="/about">About</router-link>-->
 <!--    </div>-->
       <div class="information" style="">
-          如果您喜欢这个项目， 拜托给
-          <a href="https://github.com/Jarrettluo/document-sharing-site">https://github.com/Jarrettluo/document-sharing-site</a>
-          点亮star
+          欢迎访问文献检索与知识管理系统
       </div>
     <router-view/>
   </div>

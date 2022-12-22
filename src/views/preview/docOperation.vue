@@ -25,11 +25,11 @@ export default {
                     src: require("@/assets/source/heart.png"),
                     index: "1"
                 },
-                {
-                    name: "竖个大拇指",
-                    src: require("@/assets/source/like.png"),
-                    index: "2"
-                },
+                // {
+                //     name: "竖个大拇指",
+                //     src: require("@/assets/source/like.png"),
+                //     index: "2"
+                // },
                 {
                     name: "立马下载",
                     src: require("@/assets/source/download.png"),

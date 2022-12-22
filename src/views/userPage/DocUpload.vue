@@ -72,7 +72,7 @@
             </Col>
             <Col span="20" class="description-area">
 
-                <Input v-model="value1" maxlength="140" type="textarea" placeholder="Enter something..."
+                <Input v-model="value1" maxlength="140" type="textarea" placeholder="输入一些内容..."
                        :autosize="{minRows: 2,maxRows: 5}"/>
             </Col>
         </Row>
@@ -193,9 +193,9 @@ export default {
     }
 
     .description-area {
-        /deep/ .ivu-input {
-            border: 1px solid #000000;
-        }
+        ///deep/ .ivu-input {
+        //    border: 1px solid #000000;
+        //}
     }
 
     .star-tag {
@@ -205,9 +205,9 @@ export default {
     }
 }
 
-/deep/ .ivu-upload-drag {
-    border: none;
-}
+///deep/ .ivu-upload-drag {
+//    border: none;
+//}
 
 
 </style>

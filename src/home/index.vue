@@ -12,6 +12,19 @@
             </div>
         </div>
         <div class="bottom-group">
+            <div class="left-left-panel">
+                <div class="top-container">
+                    <div class="panel-title left-pane-title">
+                        <span>库类别</span>
+                    </div>
+                    <div
+                        v-for="item in data"
+                        @click="changeToCurrentCategory(item.name, item.categoryId)"
+                    >
+                      <span>{{ item.name }}</span>
+                    </div>
+                </div>
+            </div>
             <div class="left-panel">
                 <div class="top-container">
                     <div class="panel-title left-pane-title">
@@ -30,7 +43,7 @@
                               :flag="false"
                               :title="doc.name"
                               :docId="doc.thumbId"
-                              v-for="doc in currentData.slice(0, 6)" :key="doc.id"
+                              v-for="doc in currentData.slice(0, 5)" :key="doc.id"
                               @click.native="getDocView(doc.id)"
                     ></DocThumb>
                 </div>
@@ -39,7 +52,7 @@
                               :flag="false"
                               :title="doc.name"
                               :docId="doc.thumbId"
-                              v-for="doc in currentData.slice(6, 12)" :key="doc.id"
+                              v-for="doc in currentData.slice(5, 10)" :key="doc.id"
                               @click.native="getDocView(doc.id)"
                     ></DocThumb>
                 </div>
@@ -74,7 +87,7 @@ export default {
     },
     data() {
         return {
-            imgSrc: require("../assets/source/banner.png"),
+            imgSrc: require("assets/source/banner.png"),
             data: {},
             currentData: []
         }
@@ -119,6 +132,22 @@ export default {
                 }
             })
 
+        },
+        /***
+         * 切换到对应类别
+         * @param name
+         * @param categoryId
+         */
+        changeToCurrentCategory(name, categoryId) {
+            this.currentData = []
+            this.data.forEach(item => {
+              if (item.name === name && item.categoryId === categoryId) {
+                item.clicked = true
+                this.currentData = item.docList
+              } else {
+                item.clicked = false
+              }
+            })
         }
     }
 }
@@ -178,9 +207,18 @@ export default {
         box-shadow: 0 0 5px 0 rgba(64, 64, 64, 0.3);
         border-radius: 8px;
 
-        .left-panel {
+        .left-left-panel {
             height: 100%;
-            width: 900px;
+            width: 150px;
+            float: left;
+            padding: 0 24px 0 40px;
+        }
+
+        .left-panel {
+            background: url("../assets/source/welcome.png") no-repeat;
+            background-size:100% 100%;
+            height: 100%;
+            width: 750px;
             float: left;
             padding: 0 0 0 0;
         }

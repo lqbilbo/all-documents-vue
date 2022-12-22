@@ -43,14 +43,14 @@ export default {
     padding: 30px;
 
     .tab {
-        /deep/ .ivu-tabs-nav {
-            //width: 64px;
-            //height: 22px;
-            font-size: 16px;
-            font-family: PingFangSC-Regular, PingFang SC, serif;
-            font-weight: 400;
-            line-height: 22px;
-        }
+        ///deep/ .ivu-tabs-nav {
+        //    //width: 64px;
+        //    //height: 22px;
+        //    font-size: 16px;
+        //    font-family: PingFangSC-Regular, PingFang SC, serif;
+        //    font-weight: 400;
+        //    line-height: 22px;
+        //}
     }
 
 }

@@ -60,9 +60,9 @@ export default {
     padding: 16px;
     text-align: left;
 
-    /deep/ .ivu-tabs-content {
-        height: 100%;
-    }
+    ///deep/ .ivu-tabs-content {
+    //    height: 100%;
+    //}
 }
 
 </style>

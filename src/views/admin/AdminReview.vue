@@ -368,9 +368,9 @@ export default {
     height: 100%;
     position: relative;
 
-    /deep/ .ivu-table-body {
-        height: 600px;
-    }
+    ///deep/ .ivu-table-body {
+    //    height: 600px;
+    //}
 
     .bottom-zone {
         position: absolute;
