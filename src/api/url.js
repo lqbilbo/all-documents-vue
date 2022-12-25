@@ -9,7 +9,6 @@ const CATE_UPDATE_URL = '/category/update'; // 分类更新
 
 const DOC_DETAIL_URL = '/document/detail'; // 文档详情
 const DOC_LIST_URL = '/document/list'; // 文档列表
-const DOC_LIST_BY_TAG_URL = '/document/listByTag'; // 文档标签列表
 const DOC_REMOVE_URL = '/document/auth/remove'; // 文档删除
 const DOC_WITH_CHECK_URL = '/document/listWithCategory'; // 返回已经选中的信息
 
@@ -64,7 +63,6 @@ module.exports = {
 
     DOC_DETAIL_URL,
     DOC_LIST_URL,
-    DOC_LIST_BY_TAG_URL,
     DOC_REMOVE_URL,
     DOC_WITH_CHECK_URL,
 
