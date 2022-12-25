@@ -6,7 +6,7 @@ import {
 
     DOC_VIEW_URL,
     DOC_TXT_URL,
-    DOC_REBUILD_URL
+    DOC_REBUILD_URL, DOC_LIST_BY_TAG_URL
 
 } from './url'
 
@@ -20,6 +20,10 @@ export default {
 
     getListData: (params) => {
         return Post(DOC_LIST_URL, params);
+    },
+
+    getListByTagData: (params) => {
+        return Post(DOC_LIST_BY_TAG_URL, params);
     },
 
     deleteData: (params) => {

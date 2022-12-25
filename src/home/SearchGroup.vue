@@ -18,13 +18,13 @@
                         <img :src="searchSrc" width="16px" height="16px" alt="" style="display: inline-block;"/>
                     </div>
                 </div>
-                <div class="search-input-bottom" v-show="hotSearch.length">
-                    <span class="title" style="font-width: 500;">推荐搜索：</span>
-                    <span class="search-tag" style="margin-left: 20px;"
-                          v-for="item in hotSearch"
-                          @click="clickToSearch(item)"
-                    >{{ item }}</span>
-                </div>
+<!--                <div class="search-input-bottom" v-show="hotSearch.length">-->
+<!--                    <span class="title" style="font-width: 500;">推荐搜索：</span>-->
+<!--                    <span class="search-tag" style="margin-left: 20px;"-->
+<!--                          v-for="item in hotSearch"-->
+<!--                          @click="clickToSearch(item)"-->
+<!--                    >{{ item }}</span>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

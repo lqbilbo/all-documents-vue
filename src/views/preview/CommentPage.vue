@@ -1,40 +1,51 @@
 <template>
     <div>
-        <Input v-model="inputValue" type="textarea" :rows="8" placeholder="留下只言片语"/>
-        <div class="comment-btn">
-            <Button @click="postComment">发送评论</Button>
-        </div>
+<!--        <Input v-model="inputValue" type="textarea" :rows="8" placeholder="留下只言片语"/>-->
+<!--        <div class="comment-btn">-->
+<!--            <Button @click="postComment">发送评论</Button>-->
+<!--        </div>-->
         <div class="comment-body">
-            <div class="comment-title">
-                <span>全部评论  </span>
-                <span class="comment-num">{{ totalItems }}</span>
+<!--            <div class="comment-title">-->
+<!--                <span>全部评论  </span>-->
+<!--                <span class="comment-num">{{ totalItems }}</span>-->
+<!--            </div>-->
+            <div class="demo-split-pane">
+              <AttachList titleName="文档中出现的法律法规与方法技术" category-type="TAG" @categoryChange="handleChange"/>
             </div>
-            <div class="comment-item" v-for="item in comments">
-                <div class="comment-item-logo">
-                    {{ item.src }}
-                    <img v-if="!item.src" src="../../assets/source/user_avater.png" style="width: 48px;height: 48px;"
-                         alt="">
-                </div>
-                <div class="comment-item-detail">
-                    <div class="comment-item-user">
-                        {{ item.userName | defaultUserName }}
-                    </div>
-                    <div class="comment-item-content">
-                        {{ item.content }}
-                    </div>
-                    <div class="comment-item-time">
-                        {{ item.createDate | transferTime }}
-                    </div>
-                </div>
+            <div class="demo-split-pane">
+              <div class="content">
+                <attach-table ref="attachTable" type="TAG" :cateId="cateId"
+                           class="table-panel"
+                ></attach-table>
+              </div>
+
             </div>
-            <div class="paginator" v-if="totalItems > pageSize">
-                <Page
-                    :total="totalItems"
-                    :current="currentPage"
-                    :page-size="pageSize"
-                    @on-change="pageChange"
-                    size="small"/>
-            </div>
+<!--            <div class="comment-item" v-for="item in comments">-->
+<!--                <div class="comment-item-logo">-->
+<!--                    {{ item.src }}-->
+<!--                    <img v-if="!item.src" src="../../assets/source/user_avater.png" style="width: 48px;height: 48px;"-->
+<!--                         alt="">-->
+<!--                </div>-->
+<!--                <div class="comment-item-detail">-->
+<!--                    <div class="comment-item-user">-->
+<!--                        {{ item.userName | defaultUserName }}-->
+<!--                    </div>-->
+<!--                    <div class="comment-item-content">-->
+<!--                        {{ item.content }}-->
+<!--                    </div>-->
+<!--                    <div class="comment-item-time">-->
+<!--                        {{ item.createDate | transferTime }}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="paginator" v-if="totalItems > pageSize">-->
+<!--                <Page-->
+<!--                    :total="totalItems"-->
+<!--                    :current="currentPage"-->
+<!--                    :page-size="pageSize"-->
+<!--                    @on-change="pageChange"-->
+<!--                    size="small"/>-->
+<!--            </div>-->
         </div>
     </div>
 </template>
@@ -45,20 +56,58 @@ import {parseTime} from "@/utils/index"
 
 import CommentRequest from "@/api/comment"
 
+import DocTable from "@/views/category/DocTable"
+import AttachTable from "@/views/category/AttachTable"
+import CheckTable from "@/views/category/CheckTable"
+
+
+import AttachList from "@/views/preview/AttachList"
+import CategoryRequest from "@/api/category";
+import category from "@/api/category";
+import DocumentRequest from "@/api/document";
+
 export default {
     name: "CommentPage",
     data() {
         return {
-            inputValue: "",
-            num: 22,
-            comments: [],
-            docId: this.$route.query.docId,
+            // inputValue: "",
+            // num: 22,
+            // comments: [],
+            // docId: this.$route.query.docId,
+            //
+            // currentPage: 1,
+            // totalItems: 0,
+            // pageSize: 6,
+            columns: [
+              {
+                title: 'Name',
+                key: 'name',
+                className: 'demo-table-info-cell-name'
+              }
+            ],
+            listData: [],
+            contextLine: 0,
+            currentItem: null,
+            modal1: false,
+            isEditState: false,
+            editValue: "",
+            tableHeight: 260,
 
-            currentPage: 1,
-            totalItems: 0,
-            pageSize: 6,
+            currentCatId: this.$route.query.cateId,
+            currentCatIndex: 0,
 
+            remove_modal: false,
+            remove_loading: false,
+            remove_item: {},
+
+            loading: false,
+            totalItems: 100,
+            pageSize: 20
         }
+    },
+    components: {
+        AttachTable,
+        AttachList
     },
     filters: {
         transferTime(value) {
@@ -110,20 +159,25 @@ export default {
          * 查询该篇文章的全部评论信息
          */
         init() {
-            if (this.docId === "") {
-                return;
-            }
+            let docId = this.$route.query.docId;
+            console.log('docId: ' + docId)
             let params = {
-                "docId": this.docId,
-                "page": this.currentPage - 1,
-                "rows": this.pageSize,
+              "docId": docId,
+              "page": this.currentPage - 1,
+              "rows": this.pageSize,
             }
-            CommentRequest.getListData(params).then(response => {
-                if (response.code === 200) {
-                    this.comments = response.data.comments;
-                    this.totalItems = response.data.totalNum;
-                }
+            DocumentRequest.getListData(params).then(response => {
+              if (response.code === 200) {
+                this.comments = response.data.comments;
+                this.totalItems = response.data.totalNum;
+              }
             })
+        },
+        handleChange(cateId) {
+          this.init()
+          console.log(cateId)
+          this.cateId = cateId
+          this.$refs.attachTable.getListData(cateId);
         },
         postComment() {
             if (this.inputValue === "" || this.docId === "") {

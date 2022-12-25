@@ -1,13 +1,13 @@
 <template>
     <Menu mode="vertical" :theme="theme" active-name="1" width="200px" @on-select="turnUrl" :active-name="$route.name">
-        <MenuItem name="newDocument1">
-            <Icon type="ios-paper"/>
-            添加文档
-        </MenuItem>
-        <MenuItem name="docReview">
-            <Icon type="ios-paper"/>
-            文档审核
-        </MenuItem>
+<!--        <MenuItem name="newDocument1">-->
+<!--            <Icon type="ios-paper"/>-->
+<!--            添加文档-->
+<!--        </MenuItem>-->
+<!--        <MenuItem name="docReview">-->
+<!--            <Icon type="ios-paper"/>-->
+<!--            文档审核-->
+<!--        </MenuItem>-->
         <MenuItem name="allDocuments">
             <Icon type="md-folder-open"/>
             全部文档
@@ -20,10 +20,10 @@
             <Icon type="md-pricetag"/>
             文档标签
         </MenuItem>
-        <MenuItem name="commentManage">
-            <Icon type="md-pricetag"/>
-            评论管理
-        </MenuItem>
+<!--        <MenuItem name="commentManage">-->
+<!--            <Icon type="md-pricetag"/>-->
+<!--            评论管理-->
+<!--        </MenuItem>-->
         <MenuItem name="users">
             <Icon type="md-contact"/>
             用户管理
@@ -32,10 +32,10 @@
             <Icon type="ios-podium"/>
             文档统计
         </MenuItem>
-        <MenuItem name="systemConfig">
-            <Icon type="ios-podium"/>
-            系统设置
-        </MenuItem>
+<!--        <MenuItem name="systemConfig">-->
+<!--            <Icon type="ios-podium"/>-->
+<!--            系统设置-->
+<!--        </MenuItem>-->
     </Menu>
 </template>
 <script>

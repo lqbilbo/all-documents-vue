@@ -7,9 +7,9 @@
             <Button type="text" @click="$router.push('/admin/newDocument')">
                 + 添加文档
             </Button>
-            <Button type="text" @click="$router.push('/admin/allDocuments')">
-                <Icon type="ios-settings"/>
-            </Button>
+<!--            <Button type="text" @click="$router.push('/admin/allDocuments')">-->
+<!--                <Icon type="ios-settings"/>-->
+<!--            </Button>-->
         </div>
 
     </div>
@@ -32,8 +32,8 @@ export default {
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background-color: #f4d057;
-    color: rgba(208, 164, 1, 100);
+    background-color: #a3bac4;
+    color: rgb(163, 186, 196);
     font-family: Roboto, serif;
     float: left;
 

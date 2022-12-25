@@ -1,10 +1,10 @@
 <template>
     <div class="search-doc">
         <div class="doc-title-group">
-            <div class="doc-pic" style="text-align: center;">
-<!--                <Avatar :style="{background: color}">{{ user }}</Avatar>-->
-                <img :src=" thumbId | imgSrc " alt="thumb" style="width: 36px;max-height: 48px;border: 1px solid #dcdee2; border-radius: 2px">
-            </div>
+<!--            <div class="doc-pic" style="text-align: center;">-->
+<!--&lt;!&ndash;                <Avatar :style="{background: color}">{{ user }}</Avatar>&ndash;&gt;-->
+<!--                <img :src=" thumbId | imgSrc " alt="thumb" style="width: 36px;max-height: 48px;border: 1px solid #dcdee2; border-radius: 2px">-->
+<!--            </div>-->
             <div class="title-group">
                 <div class="doc-title-info" @click="getDocView()">
                     {{ title }}
@@ -30,19 +30,19 @@
 <!--            {{description}}-->
         </div>
 <!--        <div class="ivu-list-container">-->
-            <ul class="ivu-list-item-action">
-                <li>
-                    <i class="ivu-icon ivu-icon-ios-star-outline"></i>
-                    {{collectNum}}
-                </li>
-                <li>
-                    <i class="ivu-icon ivu-icon-ios-thumbs-up-outline"></i>889
-                </li>
-                <li>
-                    <i class="ivu-icon ivu-icon-ios-chatbubbles-outline"></i>
-                    {{commentNum}}
-                </li>
-            </ul>
+<!--            <ul class="ivu-list-item-action">-->
+<!--                <li>-->
+<!--                    <i class="ivu-icon ivu-icon-ios-star-outline"></i>-->
+<!--                    {{collectNum}}-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <i class="ivu-icon ivu-icon-ios-thumbs-up-outline"></i>889-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <i class="ivu-icon ivu-icon-ios-chatbubbles-outline"></i>-->
+<!--                    {{commentNum}}-->
+<!--                </li>-->
+<!--            </ul>-->
 <!--        </div>-->
     </div>
 </template>

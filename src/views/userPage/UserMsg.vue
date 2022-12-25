@@ -31,39 +31,39 @@
                 </div>
 
             </TabPane>
-            <TabPane label="评论信息" name="name2">
-                <!--                <filter-list-page></filter-list-page>-->
+<!--            <TabPane label="评论信息" name="name2">-->
+<!--                &lt;!&ndash;                <filter-list-page></filter-list-page>&ndash;&gt;-->
 
-                <div class="page-panel">
-                    <div class="info-group">
-                        <div class="" style="width: 100%; padding: 15px; text-align: left;
-                        border-bottom: 1px solid #f1f2f3;
-" v-for="item in comments">
+<!--                <div class="page-panel">-->
+<!--                    <div class="info-group">-->
+<!--                        <div class="" style="width: 100%; padding: 15px; text-align: left;-->
+<!--                        border-bottom: 1px solid #f1f2f3;-->
+<!--" v-for="item in comments">-->
 
-                            <div class="tile-span doc-title" style="height: 22px; width: 100%;
-                            overflow: hidden; white-space: nowrap;text-overflow: ellipsis;
-                            color: #8F6100;
-                            ">
-                                {{ item.doc }}
-                            </div>
-                            <div style="padding: 5px 0;">
-                                <span>
-                                    {{ item.content }}
-                                </span>
-                            </div>
-                            <div>
-                                <span class="doc-time">
-                                    {{ item.createTime }}
-                                </span>
-                                <Icon type="md-trash" style="cursor: pointer"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page-bottom">
-                        <Page :total="100"/>
-                    </div>
-                </div>
-            </TabPane>
+<!--                            <div class="tile-span doc-title" style="height: 22px; width: 100%;-->
+<!--                            overflow: hidden; white-space: nowrap;text-overflow: ellipsis;-->
+<!--                            color: #8F6100;-->
+<!--                            ">-->
+<!--                                {{ item.doc }}-->
+<!--                            </div>-->
+<!--                            <div style="padding: 5px 0;">-->
+<!--                                <span>-->
+<!--                                    {{ item.content }}-->
+<!--                                </span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <span class="doc-time">-->
+<!--                                    {{ item.createTime }}-->
+<!--                                </span>-->
+<!--                                <Icon type="md-trash" style="cursor: pointer"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="page-bottom">-->
+<!--                        <Page :total="100"/>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </TabPane>-->
         </Tabs>
     </div>
 </template>

@@ -6,44 +6,31 @@
             <SearchGroup></SearchGroup>
             <div class="user-zone" >
                 <span @click="$router.push('/admin/allDocuments')">管理员</span>
-                <div class="user-tag" @click="$router.push('/userPage')" style="text-align: center">
+                <div class="user-tag" style="text-align: center">
                     <span style="padding: 0 5px">A</span>
                 </div>
             </div>
         </div>
         <div class="bottom-group">
-            <div class="left-left-panel">
-                <div class="top-container">
-                    <div class="panel-title left-pane-title">
-                        <span>库类别</span>
-                    </div>
-                    <div
-                        v-for="item in data"
-                        @click="changeToCurrentCategory(item.name, item.categoryId)"
-                    >
-                      <span>{{ item.name }}</span>
-                    </div>
-                </div>
-            </div>
             <div class="left-panel">
                 <div class="top-container">
                     <div class="panel-title left-pane-title">
                         <span>全部文档</span>
                     </div>
-                    <div
-                        :class=" item.clicked ? 'tag-info' : 'tag-info-unchecked' "
-                        v-for="item in data"
-                        @click="changeToCurrentTag(item.name, item.tagId)"
-                    >
-                        <span>{{ item.name }}</span>
-                    </div>
+<!--                    <div-->
+<!--                        :class=" item.clicked ? 'tag-info' : 'tag-info-unchecked' "-->
+<!--                        v-for="item in data"-->
+<!--                        @click="changeToCurrentTag(item.name, item.tagId)"-->
+<!--                    >-->
+<!--                        <span>{{ item.name }}</span>-->
+<!--                    </div>-->
                 </div>
                 <div class="doc-thumb-1">
                     <DocThumb class="doc-thumb"
                               :flag="false"
                               :title="doc.name"
                               :docId="doc.thumbId"
-                              v-for="doc in currentData.slice(0, 5)" :key="doc.id"
+                              v-for="doc in currentData.slice(0, 6)" :key="doc.id"
                               @click.native="getDocView(doc.id)"
                     ></DocThumb>
                 </div>
@@ -52,7 +39,7 @@
                               :flag="false"
                               :title="doc.name"
                               :docId="doc.thumbId"
-                              v-for="doc in currentData.slice(5, 10)" :key="doc.id"
+                              v-for="doc in currentData.slice(6, 12)" :key="doc.id"
                               @click.native="getDocView(doc.id)"
                     ></DocThumb>
                 </div>
@@ -74,6 +61,7 @@ import DocTag from '@/home/DocTag';
 import DocThumb from '@/home/DocThumb'
 import HotTrend from '@/home/HotTrend'
 import SearchGroup from '@/home/SearchGroup'
+import CategoryFilter from '@/views/filterDoc/CategoryFilter'
 
 import StatsRequest from "@/api/stats";
 
@@ -83,11 +71,12 @@ export default {
         HotTrend,
         DocTag,
         DocThumb,
-        SearchGroup
+        SearchGroup,
+        CategoryFilter
     },
     data() {
         return {
-            imgSrc: require("assets/source/banner.png"),
+            imgSrc: require("assets/source/banner.jpg"),
             data: {},
             currentData: []
         }
@@ -130,23 +119,6 @@ export default {
                 query: {
                     docId: id
                 }
-            })
-
-        },
-        /***
-         * 切换到对应类别
-         * @param name
-         * @param categoryId
-         */
-        changeToCurrentCategory(name, categoryId) {
-            this.currentData = []
-            this.data.forEach(item => {
-              if (item.name === name && item.categoryId === categoryId) {
-                item.clicked = true
-                this.currentData = item.docList
-              } else {
-                item.clicked = false
-              }
             })
         }
     }
@@ -215,10 +187,10 @@ export default {
         }
 
         .left-panel {
-            background: url("../assets/source/welcome.png") no-repeat;
-            background-size:100% 100%;
+            //background: url("../assets/source/welcome.png") no-repeat;
+            //background-size:100% 100%;
             height: 100%;
-            width: 750px;
+            width: 900px;
             float: left;
             padding: 0 0 0 0;
         }
