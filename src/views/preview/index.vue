@@ -13,9 +13,9 @@
                     <div class="doc-info-title">
                         {{ title }}
                     </div>
-                    <div class="doc-info-tag">
-                        <Tag :color="item.color" v-for="item in tags" :index="item.index">{{ item.name }}</Tag>
-                    </div>
+<!--                    <div class="doc-info-tag">-->
+<!--                        <Tag :color="item.color" v-for="item in tags" :index="item.index">{{ item.name }}</Tag>-->
+<!--                    </div>-->
                     <div class="doc-info-detail">
                         {{ userName }} {{ createTime }}
                     </div>

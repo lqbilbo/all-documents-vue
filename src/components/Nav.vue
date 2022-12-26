@@ -1,7 +1,7 @@
 <template>
     <div class="nav-container">
         <div class="nav-logo" @click="$router.push('/')">
-            <img :src="logoSrc" width="80%" height="80%" alt=""/>
+            <img :src="logoSrc" width="35%" height="35%" alt=""/>
         </div>
         <div class="nav-setting">
             <Button type="text" @click="$router.push('/admin/newDocument')">
@@ -21,7 +21,7 @@ export default {
     data() {
         return {
             buttonSize: "min",
-            logoSrc: require("../assets/svg/newLogo.svg"),
+            logoSrc: require("../assets/svg/logo.svg"),
         }
     }
 }
@@ -32,8 +32,8 @@ export default {
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background-color: #a3bac4;
-    color: rgb(163, 186, 196);
+    background-color: #281fe5;
+    color: rgb(40, 31, 229);
     font-family: Roboto, serif;
     float: left;
 

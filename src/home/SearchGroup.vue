@@ -38,7 +38,7 @@ export default {
     name: "SearchGroup",
     data() {
         return {
-            logoSrc: require("../assets/svg/newLogo.svg"),
+            logoSrc: require("../assets/svg/logo22.svg"),
             searchSrc: require("../assets/svg/search.svg"),
             placeholder: '请输入您想要查找的文档',
             hotSearch: [],

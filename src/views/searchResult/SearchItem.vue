@@ -19,7 +19,7 @@
                     <div class="description-item" v-show="categoryIn">
                         {{ categoryIn }}
                     </div>
-                    <Tag color="blue" v-for="item in tagsIn">{{item}}</Tag>
+<!--                    <Tag color="blue" v-for="item in tagsIn">{{item}}</Tag>-->
 <!--                    <Tag color="geekblue">geekblue</Tag>-->
 <!--                    <Tag color="purple">purple</Tag>-->
                 </div>

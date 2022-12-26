@@ -97,7 +97,7 @@ export default {
     },
     data() {
         return {
-            imgSrc: require("assets/source/banner.jpg"),
+            imgSrc: require("assets/source/head.jpg"),
             data: {},
             currentData: []
         }

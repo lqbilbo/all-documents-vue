@@ -53,7 +53,7 @@ export default {
     name: "CategoryFilter",
     data() {
         return {
-            logoSrc: require("@/assets/svg/newLogo.svg"),
+            logoSrc: require("@/assets/svg/logo.svg"),
             searchSrc: require("@/assets/svg/search.svg"),
             placeholder: '请输入您想要查找的文档',
             categoryType: 'CATEGORY',
