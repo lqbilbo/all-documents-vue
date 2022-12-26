@@ -12,11 +12,19 @@
             </div>
         </div>
         <div class="bottom-group">
+            <div class="left-left-panel">
+              <AttachList titleName="全部文档" category-type="CATEGORY" @categoryChange="handleChange"/>
+            </div>
             <div class="left-panel">
                 <div class="top-container">
-                    <div class="panel-title left-pane-title">
-                        <span>全部文档</span>
-                    </div>
+<!--                    <div class="content">-->
+                    <attach-table ref="attachTable" type="CATEGORY" :cateId="cateId"
+                                  class="table-panel"
+                    ></attach-table>
+<!--                    </div>-->
+<!--                    <div class="panel-title left-pane-title">-->
+<!--                        <span>全部文档</span>-->
+<!--                    </div>-->
 <!--                    <div-->
 <!--                        :class=" item.clicked ? 'tag-info' : 'tag-info-unchecked' "-->
 <!--                        v-for="item in data"-->
@@ -24,25 +32,34 @@
 <!--                    >-->
 <!--                        <span>{{ item.name }}</span>-->
 <!--                    </div>-->
+
                 </div>
-                <div class="doc-thumb-1">
-                    <DocThumb class="doc-thumb"
-                              :flag="false"
-                              :title="doc.name"
-                              :docId="doc.thumbId"
-                              v-for="doc in currentData.slice(0, 6)" :key="doc.id"
-                              @click.native="getDocView(doc.id)"
-                    ></DocThumb>
-                </div>
-                <div class="doc-thumb-1 second-group">
-                    <DocThumb class="doc-thumb"
-                              :flag="false"
-                              :title="doc.name"
-                              :docId="doc.thumbId"
-                              v-for="doc in currentData.slice(6, 12)" :key="doc.id"
-                              @click.native="getDocView(doc.id)"
-                    ></DocThumb>
-                </div>
+<!--                <div class="doc-thumb-1">-->
+<!--                  <div class="content">-->
+<!--                    <attach-table ref="attachTable" type="TAG" :cateId="cateId"-->
+<!--                                  class="table-panel"-->
+<!--                    ></attach-table>-->
+<!--                  </div>-->
+
+<!--                </div>-->
+<!--                <div class="doc-thumb-1">-->
+<!--                    <DocThumb class="doc-thumb"-->
+<!--                              :flag="false"-->
+<!--                              :title="doc.name"-->
+<!--                              :docId="doc.thumbId"-->
+<!--                              v-for="doc in currentData.slice(0, 6)" :key="doc.id"-->
+<!--                              @click.native="getDocView(doc.id)"-->
+<!--                    ></DocThumb>-->
+<!--                </div>-->
+<!--                <div class="doc-thumb-1 second-group">-->
+<!--                    <DocThumb class="doc-thumb"-->
+<!--                              :flag="false"-->
+<!--                              :title="doc.name"-->
+<!--                              :docId="doc.thumbId"-->
+<!--                              v-for="doc in currentData.slice(6, 12)" :key="doc.id"-->
+<!--                              @click.native="getDocView(doc.id)"-->
+<!--                    ></DocThumb>-->
+<!--                </div>-->
             </div>
             <div class="right-panel">
                 <div class="top-container">
@@ -64,6 +81,8 @@ import SearchGroup from '@/home/SearchGroup'
 import CategoryFilter from '@/views/filterDoc/CategoryFilter'
 
 import StatsRequest from "@/api/stats";
+import AttachTable from "@/views/category/AttachTable";
+import AttachList from "@/views/preview/AttachList";
 
 export default {
     name: "index.vue",
@@ -72,7 +91,9 @@ export default {
         DocTag,
         DocThumb,
         SearchGroup,
-        CategoryFilter
+        CategoryFilter,
+        AttachList,
+        AttachTable
     },
     data() {
         return {
@@ -120,6 +141,11 @@ export default {
                     docId: id
                 }
             })
+        },
+        handleChange(cateId) {
+            console.log(cateId)
+            this.cateId = cateId
+            this.$refs.attachTable.getListData(cateId);
         }
     }
 }
@@ -181,7 +207,7 @@ export default {
 
         .left-left-panel {
             height: 100%;
-            width: 150px;
+            width: 200px;
             float: left;
             padding: 0 24px 0 40px;
         }
@@ -190,7 +216,7 @@ export default {
             //background: url("../assets/source/welcome.png") no-repeat;
             //background-size:100% 100%;
             height: 100%;
-            width: 900px;
+            width: 700px;
             float: left;
             padding: 0 0 0 0;
         }

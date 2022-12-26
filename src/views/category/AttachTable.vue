@@ -1,6 +1,6 @@
 <template>
-    <div class="attachTable">
-        <div class="table-container" ref="docTable">
+    <div class="docTable">
+        <div class="table-container" ref="attachTable">
             <Table border ref="selection" width="100%" :height="height" :columns="filterColumns||columns" :data="data" :loading="loading">
                 <template #name="{ row }">
                     <p class="doc-title" @click="preview(row.id)">

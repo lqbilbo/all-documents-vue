@@ -174,7 +174,6 @@ export default {
             })
         },
         handleChange(cateId) {
-          this.init()
           console.log(cateId)
           this.cateId = cateId
           this.$refs.attachTable.getListData(cateId);

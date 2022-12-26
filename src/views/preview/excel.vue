@@ -49,7 +49,7 @@ export default {
 
             let docId = this.$route.query.docId;
 
-            let wordURL = 'http://1.117.103.179:8082/files/view/' + docId
+            let wordURL = 'http://localhost:8082/files/view/' + docId
 
             axios({
                 method: 'get',
