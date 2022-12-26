@@ -4,7 +4,7 @@
             <img :src="logoSrc" width="35%" height="35%" alt=""/>
         </div>
         <div class="nav-setting">
-            <Button type="text" @click="$router.push('/admin/newDocument')">
+            <Button type="text" class="nav-setting-button" @click="$router.push('/admin/newDocument')">
                 + 添加文档
             </Button>
 <!--            <Button type="text" @click="$router.push('/admin/allDocuments')">-->
@@ -64,5 +64,8 @@ export default {
     float: right;
 }
 
+.nav-setting-button {
+    color: #000000;
+}
 
 </style>

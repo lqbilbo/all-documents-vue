@@ -4,9 +4,9 @@
 <!--      <router-link to="/">Home</router-link> |-->
 <!--      <router-link to="/about">About</router-link>-->
 <!--    </div>-->
-      <div class="information" style="">
-          欢迎访问文献检索与知识管理系统
-      </div>
+<!--      <div class="information" style="">-->
+<!--          欢迎访问城安知网文献检索与知识管理系统-->
+<!--      </div>-->
     <router-view/>
   </div>
 </template>
