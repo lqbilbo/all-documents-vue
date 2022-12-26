@@ -11,14 +11,14 @@
             </div>
             <div class="first-doc-detail">
                 <div class="doc-title">{{ top1.name }}</div>
-                <div class="doc-info">
-                    <Icon type="ios-chatbubbles-outline"/>
-                    {{ top1.commentNum }}
-                </div>
-                <div class="doc-info">
-                    <Icon type="ios-thumbs-up-outline"/>
-                    {{ top1.likeNum }}
-                </div>
+<!--                <div class="doc-info">-->
+<!--                    <Icon type="ios-chatbubbles-outline"/>-->
+<!--                    {{ top1.commentNum }}-->
+<!--                </div>-->
+<!--                <div class="doc-info">-->
+<!--                    <Icon type="ios-thumbs-up-outline"/>-->
+<!--                    {{ top1.likeNum }}-->
+<!--                </div>-->
                 <div class="doc-info">
                     <Icon type="md-heart-outline"/>
                     {{ top1.collectNum }}

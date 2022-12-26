@@ -32,8 +32,9 @@ export default {
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background-color: #281fe5;
-    color: rgb(40, 31, 229);
+    /*background-color: #281fe5;*/
+    background-image: url("../assets/source/loginbg.jpg");
+    /*color: rgb(40, 31, 229);*/
     font-family: Roboto, serif;
     float: left;
 
