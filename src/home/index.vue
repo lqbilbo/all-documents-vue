@@ -159,9 +159,9 @@ export default {
     padding-bottom: 20px;
 
     .top-group {
-        height: 340px;
+        height: 160px;
         width: 100%;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
         z-index: -1;
 
         .user-zone {

@@ -79,7 +79,7 @@ export default {
     position: absolute;
     left: 0;
     top: 0;
-    padding-top: 100px;
+    padding-top: 60px;
 
     .search-zone {
         width: 745px;
